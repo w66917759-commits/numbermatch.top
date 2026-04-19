@@ -256,14 +256,16 @@
   }
 
   .game-load-card {
-    width: min(460px, 100%);
+    width: min(260px, 100%);
     display: grid;
-    gap: 12px;
-    padding: 20px;
+    justify-items: center;
+    gap: 14px;
+    padding: 28px 24px;
     border-radius: 22px;
     border: 1px solid rgba(255, 209, 142, 0.18);
     background: rgba(16, 20, 28, 0.82);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    text-align: center;
   }
 
   .game-load-kicker {
@@ -279,10 +281,24 @@
     line-height: 1.2;
   }
 
+  .game-load-spinner {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 4px solid rgba(255, 249, 239, 0.22);
+    border-top-color: #ffd18e;
+    animation: site-spin 0.9s linear infinite;
+  }
+
   .game-load-copy {
     margin: 0;
     color: rgba(255, 249, 239, 0.82);
     line-height: 1.6;
+    font-size: 0;
+  }
+
+  @keyframes site-spin {
+    to { transform: rotate(360deg); }
   }
 
   .game-load-actions {
@@ -689,14 +705,12 @@
         ></iframe>
         <div class="game-load-cover" data-load-cover>
           <div class="game-load-card">
-            <span class="game-load-kicker">Preparing game link</span>
-            <strong class="game-load-title" data-load-title>Loading Number Match — Play Online Free</strong>
-            <p class="game-load-copy" data-load-copy>
-              We are waking up the game iframe. If this link stays dark, switch to a backup link or open the selected link.
-            </p>
-            <div class="game-load-actions">
+            <span class="game-load-spinner" aria-hidden="true"></span>
+            <strong class="game-load-title" data-load-title>Loading...</strong>
+            <p class="game-load-copy" data-load-copy>Loading...</p>
+            <div class="game-load-actions" hidden>
               <button type="button" class="game-load-action" data-next-source hidden>
-                Try backup link
+                Retry
               </button>
               <a
                 class="game-load-link"
@@ -705,7 +719,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Open selected link
+                Open
               </a>
             </div>
           </div>
@@ -816,36 +830,8 @@
 
           const setCoverState = (state, option, fallbackOption = null) => {
             cover.dataset.state = state;
-            if (state === 'slow') {
-              titleNode.textContent = 'Still loading? Switch sources if needed';
-              copy.textContent = options.length > 1
-                ? 'This embed is taking longer than normal. Try the backup source or open the original source page in a new tab.'
-                : 'This embed is taking longer than normal. You can keep waiting or open the original source page in a new tab.';
-              return;
-            }
-            if (state === 'switching') {
-              titleNode.textContent = 'Switching to a faster backup source';
-              copy.textContent = fallbackOption
-                ? 'The current source is slow in this browser. We are now trying ' + fallbackOption.label + '.'
-                : 'The current source is slow in this browser. We are trying another source now.';
-              return;
-            }
-            if (state === 'stuck') {
-              titleNode.textContent = 'This source may be stalled';
-              copy.textContent = options.length > 1
-                ? 'Use the backup source button to try another iframe.'
-                : 'Open the original source page while we keep trying here.';
-              return;
-            }
-            if (state === 'domain-blocked') {
-              titleNode.textContent = 'Use the production domain for this game';
-              copy.textContent = 'This GameDistribution iframe blocks Vercel preview domains. Open the production domain after it is registered with GameDistribution, or use the original source link.';
-              return;
-            }
-            titleNode.textContent = 'Loading ' + option.title;
-            copy.textContent = options.length > 1
-              ? 'We are waking up the game iframe. If this source stays dark, switch to a backup source or open the original source page.'
-              : 'We are waking up the game iframe. If it stays dark for too long, open the original source page.';
+            titleNode.textContent = 'Loading...';
+            copy.textContent = 'Loading...';
           };
 
           const activate = (index, attempted = []) => {
