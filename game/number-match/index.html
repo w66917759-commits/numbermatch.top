@@ -315,7 +315,9 @@
   }
 
   .game-source-links-label,
-  .network-card-domain {
+  .network-card-domain,
+  .network-card-kicker,
+  .section-kicker {
     font-size: 0.82rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -339,27 +341,88 @@
 
   .network-grid {
     display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .related-network {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .related-network::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 16% 0%, rgba(184, 111, 24, 0.14), transparent 34%),
+      radial-gradient(circle at 90% 10%, rgba(255, 209, 142, 0.24), transparent 30%);
+  }
+
+  .related-network > * {
+    position: relative;
+  }
+
+  .section-heading-row {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 16px;
   }
 
   .network-card {
+    position: relative;
     display: grid;
-    gap: 8px;
-    padding: 16px;
-    border: 1px solid rgba(184, 111, 24, 0.18);
-    background: rgba(184, 111, 24, 0.06);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "kicker cta"
+      "title cta"
+      "domain cta";
+    gap: 6px 16px;
+    align-items: center;
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(184, 111, 24, 0.16);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 246, 231, 0.68)),
+      rgba(184, 111, 24, 0.06);
     color: inherit;
+    box-shadow: 0 14px 30px rgba(69, 44, 12, 0.08);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .network-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(184, 111, 24, 0.34);
+    box-shadow: 0 18px 38px rgba(69, 44, 12, 0.13);
+  }
+
+  .network-card-kicker {
+    grid-area: kicker;
+    font-size: 0.72rem;
   }
 
   .network-card-title {
+    grid-area: title;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: clamp(1.02rem, 2vw, 1.22rem);
+    line-height: 1.15;
   }
 
-  .network-card-copy {
+  .network-card-domain {
+    grid-area: domain;
     color: var(--site-muted);
-    line-height: 1.5;
+  }
+
+  .network-card-cta {
+    grid-area: cta;
+    align-self: center;
+    border-radius: 999px;
+    padding: 10px 14px;
+    background: var(--site-accent);
+    color: #fffaf2;
+    font-weight: 800;
+    white-space: nowrap;
   }
 
   .site-footer {
@@ -566,6 +629,19 @@
     .game-source-switcher,
     .game-load-actions,
     .source-link-list { flex-direction: column; }
+    .network-grid { grid-template-columns: 1fr; }
+    .network-card {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "kicker"
+        "title"
+        "domain"
+        "cta";
+    }
+    .network-card-cta {
+      justify-self: start;
+      margin-top: 4px;
+    }
     .game-source-button,
     .game-load-action,
     .game-load-link,
@@ -890,12 +966,16 @@
           <ul class="related-list"><li><a href="/tag/puzzle-games">puzzle-games</a></li><li><a href="/tag/relaxing-games">relaxing-games</a></li></ul>
         </section>
 
-        <section class="site-panel page-section">
-      <h2>From Our Network</h2>
-      <div class="network-grid"><a class="network-card" href="/game/merge-flowers" data-network-domain="https://flowermerger.site">
+        <section class="site-panel page-section related-network">
+      <div class="section-heading-row">
+        <span class="section-kicker">More to play</span>
+        <h2>Related Games</h2>
+      </div>
+      <div class="network-grid"><a class="network-card" href="https://flowermerger.site/game/merge-flowers" data-network-domain="https://flowermerger.site">
+          <span class="network-card-kicker">Game 1</span>
           <span class="network-card-title">Merge Flowers</span>
           <span class="network-card-domain">flowermerger.site</span>
-          <span class="network-card-copy">Open this sister game site</span>
+          <span class="network-card-cta">Play now</span>
         </a></div>
     </section>
 
