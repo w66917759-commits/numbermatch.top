@@ -68,8 +68,23 @@ Number Match is an HTML5 browser game built around reading the board, pairing eq
 - `/seo.json` contains the machine-readable SEO blueprint used to generate this README and page metadata.
 - `/privacy`, `/terms`, `/cookies`, and `/disclaimer` are static compliance pages.
 - `CNAME`, `robots.txt`, and `sitemap.xml` are ready for static hosting.
+- `sw.js` is generated when this domain has an ad service-worker zone configured.
 - `vercel.json` forces Vercel to deploy this repository as a static no-framework site.
 
 ## Deploy
 
-Push this folder to its own public GitHub repository and enable GitHub Pages or connect it to a static host.
+Recommended main-system flow:
+
+```bash
+pnpm project:repo -- --slug number-match --init-git --commit --create-github
+pnpm project:vercel -- --slug number-match
+```
+
+Then configure DNS at the registrar:
+
+```txt
+@     A     76.76.21.21
+www   A     76.76.21.21
+```
+
+Remove parking/forwarding records for `@` and `www`. `_domainconnect` TXT can stay.

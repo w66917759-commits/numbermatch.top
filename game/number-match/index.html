@@ -966,10 +966,11 @@
     <script>
     (() => {
       const consentConfig = {"enabled":true,"storageKey":"gamesite_cookie_consent"};
-      const adRuntime = {"mode":"placeholder","loaderEnabled":false,"slots":[{"name":"ad_after_game","kind":"banner","markupHtml":"<div class=\"ad ad-banner\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000002\"\n       data-ad-format=\"auto\"\n       data-full-width-responsive=\"true\"></ins>\n  \n</div>"},{"name":"ad_middle","kind":"native","markupHtml":"<div class=\"ad ad-native\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-format=\"fluid\"\n       data-ad-layout-key=\"-fb+5w+4e-db+86\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000003\"></ins>\n  \n</div>"},{"name":"ad_after_tips","kind":"native","markupHtml":"<div class=\"ad ad-native\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-format=\"fluid\"\n       data-ad-layout-key=\"-fb+5w+4e-db+86\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000008\"></ins>\n  \n</div>"},{"name":"ad_side_left","kind":"skyscraper","markupHtml":"<div class=\"ad ad-skyscraper\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block;width:100%;min-height:600px\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000004\"\n       data-ad-format=\"vertical\"\n       data-full-width-responsive=\"false\"></ins>\n  \n</div>"},{"name":"ad_side_right","kind":"skyscraper","markupHtml":"<div class=\"ad ad-skyscraper\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block;width:100%;min-height:600px\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000005\"\n       data-ad-format=\"vertical\"\n       data-full-width-responsive=\"false\"></ins>\n  \n</div>"}]};
+      const adRuntime = {"mode":"placeholder","loaderEnabled":false,"slots":[{"name":"ad_after_game","kind":"banner","markupHtml":"<div class=\"ad ad-banner\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000002\"\n       data-ad-format=\"auto\"\n       data-full-width-responsive=\"true\"></ins>\n  \n</div>"},{"name":"ad_middle","kind":"native","markupHtml":"<div class=\"ad ad-native\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-format=\"fluid\"\n       data-ad-layout-key=\"-fb+5w+4e-db+86\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000003\"></ins>\n  \n</div>"},{"name":"ad_after_tips","kind":"native","markupHtml":"<div class=\"ad ad-native\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-format=\"fluid\"\n       data-ad-layout-key=\"-fb+5w+4e-db+86\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000008\"></ins>\n  \n</div>"},{"name":"ad_side_left","kind":"skyscraper","markupHtml":"<div class=\"ad ad-skyscraper\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block;width:100%;min-height:600px\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000004\"\n       data-ad-format=\"vertical\"\n       data-full-width-responsive=\"false\"></ins>\n  \n</div>"},{"name":"ad_side_right","kind":"skyscraper","markupHtml":"<div class=\"ad ad-skyscraper\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block;width:100%;min-height:600px\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000005\"\n       data-ad-format=\"vertical\"\n       data-full-width-responsive=\"false\"></ins>\n  \n</div>"}],"serviceWorker":{"path":"/sw.js","domain":"5gvci.com","zoneId":10897629,"importUrl":"https://5gvci.com/act/files/service-worker.min.js?r=sw"}};
       const banner = document.querySelector("[data-cookie-banner]");
       const storageKey = consentConfig.storageKey;
       let adsBooted = false;
+      let adServiceWorkerBooted = false;
 
       function readConsent() {
         try {
@@ -993,6 +994,7 @@
       }
 
       function renderAds() {
+        registerAdServiceWorker();
         if (adsBooted || adRuntime.mode !== "inject" || !adRuntime.slots.length) return;
 
         const slotMap = new Map(adRuntime.slots.map((slot) => [slot.name, slot]));
@@ -1040,6 +1042,14 @@
         }
 
         mountAds();
+      }
+
+      function registerAdServiceWorker() {
+        if (adServiceWorkerBooted || !adRuntime.serviceWorker || !("serviceWorker" in navigator)) return;
+        adServiceWorkerBooted = true;
+        navigator.serviceWorker.register(adRuntime.serviceWorker.path).catch((error) => {
+          console.warn("[ads] failed to register service worker", error);
+        });
       }
 
       function applyConsent(consented) {
