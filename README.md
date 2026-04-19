@@ -25,9 +25,9 @@ Play Number Match now, a free browser merge puzzle that loads in seconds. No dow
 
 ## Keyword Variations
 
-- Play Number Match online free
-- Number Match unblocked in browser
-- Number Match free to play — no download
+- Play Number Match online game free
+- Number Match unblocked online game
+- Number Match free game no download
 
 ## Internal Link Targets
 
