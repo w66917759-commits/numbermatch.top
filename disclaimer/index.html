@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disclaimer</title>
+  <meta name="description" content="Disclaimer Last updated: 2026-04-15. Games on GameSite are original implementations created for entertainment. Any resemblance to existing titles is coincidenta">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://numbermatch.top/disclaimer">
+  <style>
+  :root {
+    --site-bg: linear-gradient(180deg, #f7f1e8 0%, #fffaf2 42%, #f3efe6 100%);
+    --site-surface: rgba(255, 255, 255, 0.92);
+    --site-border: rgba(69, 44, 12, 0.12);
+    --site-shadow: 0 20px 60px rgba(69, 44, 12, 0.12);
+    --site-text: #2a2116;
+    --site-muted: #65584a;
+    --site-accent: #b86f18;
+    --site-accent-strong: #8e4f09;
+    --site-radius: 24px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body.site-page {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--site-text);
+    background: var(--site-bg);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    padding: 0;
+  }
+
+  .site-shell {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 32px 16px 144px;
+  }
+
+  .site-aside {
+    display: none;
+  }
+
+  @media (min-width: 1400px) {
+    body.site-page {
+      grid-template-columns: minmax(220px, 1fr) minmax(0, 1180px) minmax(220px, 1fr);
+      column-gap: clamp(16px, 1.5vw, 32px);
+      justify-items: stretch;
+    }
+
+    .site-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 96px;
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .site-aside-left {
+      justify-self: end;
+    }
+
+    .site-aside-right {
+      justify-self: start;
+    }
+
+    .site-aside .ad-slot {
+      width: 320px;
+      min-height: 900px;
+      align-self: center;
+    }
+
+    .site-aside .ad-slot-body {
+      flex: 1 1 auto;
+      min-height: 820px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .site-main {
+    display: grid;
+    gap: 24px;
+  }
+
+  .site-panel {
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
+    border-radius: var(--site-radius);
+    box-shadow: var(--site-shadow);
+    backdrop-filter: blur(12px);
+  }
+
+  .page-hero,
+  .page-section,
+  .game-shell,
+  .site-footer {
+    padding: clamp(20px, 2vw, 32px);
+  }
+
+  .page-hero {
+    display: grid;
+    gap: 12px;
+  }
+
+  .page-eyebrow {
+    color: var(--site-accent-strong);
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .page-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .page-description,
+  .page-section p,
+  .site-meta,
+  .site-footer p,
+  .cookie-banner-copy,
+  .card-desc,
+  .tag-empty {
+    color: var(--site-muted);
+    line-height: 1.65;
+  }
+
+  .page-section h2,
+  .page-section h3,
+  .site-footer h2 {
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  .page-section ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 10px;
+  }
+
+  .game-shell {
+    display: grid;
+    gap: 16px;
+  }
+
+  .game-frame {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: calc(var(--site-radius) - 6px);
+    border: 1px solid rgba(69, 44, 12, 0.08);
+    overflow: hidden;
+  }
+
+  .game-embed {
+    padding: 18px;
+  }
+
+  .game-iframe-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 80vh;
+    border-radius: calc(var(--site-radius) - 12px);
+    overflow: hidden;
+    background: #000;
+  }
+
+  .game-iframe-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .game-embed-player {
+    display: grid;
+    gap: 14px;
+  }
+
+  .game-source-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .game-source-button,
+  .game-load-action,
+  .game-load-link,
+  .source-link-chip,
+  .network-card {
+    border-radius: 999px;
+    text-decoration: none;
+  }
+
+  .game-source-button {
+    border: 1px solid rgba(184, 111, 24, 0.22);
+    background: rgba(184, 111, 24, 0.08);
+    color: var(--site-text);
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .game-source-button.is-active {
+    background: rgba(184, 111, 24, 0.18);
+    border-color: rgba(184, 111, 24, 0.38);
+    color: var(--site-accent-strong);
+  }
+
+  .game-load-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+      radial-gradient(circle at top, rgba(69, 44, 12, 0.18), transparent 48%),
+      linear-gradient(135deg, rgba(15, 21, 31, 0.92), rgba(37, 58, 91, 0.92));
+    color: #fff9ef;
+    text-align: left;
+  }
+
+  .game-load-cover[hidden] {
+    display: none;
+  }
+
+  .game-load-card {
+    width: min(460px, 100%);
+    display: grid;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 209, 142, 0.18);
+    background: rgba(16, 20, 28, 0.82);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  }
+
+  .game-load-kicker {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffd18e;
+  }
+
+  .game-load-title {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.2;
+  }
+
+  .game-load-copy {
+    margin: 0;
+    color: rgba(255, 249, 239, 0.82);
+    line-height: 1.6;
+  }
+
+  .game-load-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .game-load-action,
+  .game-load-link {
+    border: 1px solid rgba(255, 209, 142, 0.2);
+    padding: 10px 16px;
+    font-weight: 700;
+  }
+
+  .game-load-action {
+    background: #ffd18e;
+    color: #3a2305;
+    cursor: pointer;
+  }
+
+  .game-load-link {
+    color: #fff9ef;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .game-source-links {
+    display: grid;
+    gap: 10px;
+  }
+
+  .game-source-links-label,
+  .network-card-domain {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--site-accent-strong);
+    font-weight: 700;
+  }
+
+  .source-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .source-link-chip {
+    padding: 10px 14px;
+    border: 1px solid rgba(184, 111, 24, 0.22);
+    background: rgba(184, 111, 24, 0.08);
+    color: var(--site-text);
+    font-weight: 600;
+  }
+
+  .network-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .network-card {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid rgba(184, 111, 24, 0.18);
+    background: rgba(184, 111, 24, 0.06);
+    color: inherit;
+  }
+
+  .network-card-title {
+    font-weight: 800;
+    font-size: 1rem;
+  }
+
+  .network-card-copy {
+    color: var(--site-muted);
+    line-height: 1.5;
+  }
+
+  .site-footer {
+    display: grid;
+    gap: 12px;
+  }
+
+  .site-footer .compliance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .site-footer .compliance a,
+  .inline-link,
+  .related-list a,
+  .card,
+  .tag-card {
+    color: inherit;
+  }
+
+  .site-footer .compliance a,
+  .inline-link,
+  .related-list a {
+    color: var(--site-accent-strong);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.14em;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .faq-item {
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(184, 111, 24, 0.08);
+  }
+
+  .faq-item h3 {
+    margin-bottom: 8px;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .related-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(184, 111, 24, 0.08);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .ad-slot {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px dashed rgba(184, 111, 24, 0.28);
+    background: rgba(184, 111, 24, 0.06);
+  }
+
+  .ad-slot-banner .ad-slot-body,
+  .ad-slot-billboard .ad-slot-body,
+  .ad-slot-native .ad-slot-body,
+  .ad-slot-skyscraper .ad-slot-body,
+  .ad-slot-sticky .ad-slot-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ad-slot-billboard {
+    min-height: 220px;
+    background: linear-gradient(135deg, rgba(184, 111, 24, 0.12), rgba(255, 219, 168, 0.24));
+  }
+
+  .ad-slot-billboard .ad-slot-body {
+    min-height: 150px;
+  }
+
+  .ad-slot-banner {
+    min-height: 170px;
+  }
+
+  .ad-slot-banner .ad-slot-body {
+    min-height: 118px;
+  }
+
+  .ad-slot-native {
+    min-height: 220px;
+  }
+
+  .ad-slot-native .ad-slot-body {
+    min-height: 150px;
+  }
+
+  .ad-slot-skyscraper {
+    min-height: 900px;
+  }
+
+  .ad-slot-skyscraper .ad-slot-body {
+    min-height: 820px;
+  }
+
+  .ad-slot-sticky {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 25;
+    min-height: 108px;
+    box-shadow: 0 18px 45px rgba(69, 44, 12, 0.18);
+    backdrop-filter: blur(16px);
+  }
+
+  .ad-slot-sticky .ad-slot-body {
+    min-height: 68px;
+  }
+
+  .ad-slot-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--site-accent-strong);
+  }
+
+  .ad-slot-message,
+  .ad-slot-placeholder {
+    margin: 0;
+    color: var(--site-muted);
+    font-size: 0.95rem;
+  }
+
+  .cookie-banner {
+    position: fixed;
+    right: 16px;
+    bottom: 132px;
+    z-index: 30;
+    width: min(420px, calc(100vw - 32px));
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(42, 33, 22, 0.1);
+    background: rgba(42, 33, 22, 0.94);
+    color: #fff9ef;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  }
+
+  .cookie-banner[hidden] { display: none; }
+
+  .cookie-banner-actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cookie-banner button {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .cookie-banner button[data-cookie-action="accept"] {
+    background: #ffd18e;
+    color: #3a2305;
+  }
+
+  .cookie-banner button[data-cookie-action="decline"] {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff9ef;
+  }
+
+  @media (min-width: 980px) {
+    .ad-slot-sticky {
+      display: none;
+    }
+
+    .cookie-banner {
+      bottom: 16px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-shell { padding-top: 20px; }
+    .game-embed { padding: 12px; }
+    .cookie-banner { left: 16px; right: 16px; width: auto; bottom: 144px; }
+    .game-load-cover { padding: 14px; }
+    .game-load-card { padding: 16px; }
+    .game-source-switcher,
+    .game-load-actions,
+    .source-link-list { flex-direction: column; }
+    .game-source-button,
+    .game-load-action,
+    .game-load-link,
+    .source-link-chip { width: 100%; justify-content: center; text-align: center; }
+    .ad-slot-billboard { min-height: 180px; }
+    .ad-slot-banner { min-height: 150px; }
+    .ad-slot-native { min-height: 190px; }
+    .ad-slot-sticky { left: 10px; right: 10px; bottom: 10px; }
+  }
+
+
+  .legal-copy {
+    display: grid;
+    gap: 16px;
+  }
+
+  .legal-copy h1,
+  .legal-copy h2 {
+    margin: 0;
+  }
+
+  .legal-copy ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+</style>
+</head>
+<body class="site-page">
+  <div class="site-shell">
+    <main class="site-main">
+      
+      <section class="site-panel page-section legal-copy">
+        <h1>Disclaimer</h1>
+<p>Last updated: 2026-04-15.</p>
+
+<p>Games on GameSite are original implementations created for entertainment. Any resemblance to existing titles is coincidental
+or is a generic mechanic (e.g. merge, clicker, reaction) not subject to copyright protection.</p>
+
+<h2>Trademarks</h2>
+<p>All trademarks, logos, and brand names are the property of their respective owners. Use on this site does not imply endorsement.</p>
+
+<h2>Takedown Requests</h2>
+<p>If you believe content infringes your rights, contact contact@numbermatch.top with details. We will review and remove within a reasonable timeframe.</p>
+      </section>
+    
+      <footer class="site-panel site-footer"><nav class="compliance">
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/terms">Terms of Service</a>
+  <a href="/cookies">Cookie Notice</a>
+  <a href="/disclaimer">Disclaimer</a>
+</nav>
+<p class="copy">© 2026 GameSite. All trademarks belong to their respective owners.</p>
+</footer>
+    </main>
+    
+    <aside class="cookie-banner" data-cookie-banner hidden>
+      <strong>Cookie Preferences</strong>
+      <p class="cookie-banner-copy">
+        We use local storage for gameplay and optional ad cookies for monetization.
+        Review our <a class="inline-link" href="/cookies">Cookie Notice</a> and
+        <a class="inline-link" href="/privacy">Privacy Policy</a>.
+      </p>
+      <div class="cookie-banner-actions">
+        <button type="button" data-cookie-action="accept">Accept</button>
+        <button type="button" data-cookie-action="decline">Decline</button>
+      </div>
+    </aside>
+  
+  </div>
+  <script>
+    (() => {
+      const consentConfig = {"enabled":true,"storageKey":"gamesite_cookie_consent"};
+      const adRuntime = {"mode":"placeholder","loaderEnabled":false,"slots":[]};
+      const banner = document.querySelector("[data-cookie-banner]");
+      const storageKey = consentConfig.storageKey;
+      let adsBooted = false;
+
+      function readConsent() {
+        try {
+          return window.localStorage.getItem(storageKey);
+        } catch {
+          return null;
+        }
+      }
+
+      function writeConsent(value) {
+        try {
+          window.localStorage.setItem(storageKey, value);
+        } catch {
+          /* ignore */
+        }
+      }
+
+      function setBannerVisible(visible) {
+        if (!banner) return;
+        banner.hidden = !visible;
+      }
+
+      function renderAds() {
+        if (adsBooted || adRuntime.mode !== "inject" || !adRuntime.slots.length) return;
+
+        const slotMap = new Map(adRuntime.slots.map((slot) => [slot.name, slot]));
+        const mountAds = () => {
+          document.querySelectorAll("[data-ad-slot][data-ad-runtime='inject']").forEach((node) => {
+            const slotName = node.getAttribute("data-ad-slot") || "";
+            const slot = slotMap.get(slotName);
+            const body = node.querySelector(".ad-slot-body");
+            if (!slot || !body || body.getAttribute("data-loaded") === "true") return;
+            body.innerHTML = slot.markupHtml;
+            body.setAttribute("data-loaded", "true");
+            try {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (error) {
+              console.warn("[ads] failed to initialize slot", slotName, error);
+            }
+          });
+          adsBooted = true;
+        };
+
+        if (adRuntime.loaderEnabled && adRuntime.loaderSrc) {
+          const existing = document.querySelector("script[data-ad-loader='adsense']");
+          if (existing && existing.getAttribute("data-loaded") === "true") {
+            mountAds();
+            return;
+          }
+          if (existing) {
+            existing.addEventListener("load", mountAds, { once: true });
+            return;
+          }
+          const loader = document.createElement("script");
+          loader.async = true;
+          loader.src = adRuntime.loaderSrc;
+          loader.crossOrigin = "anonymous";
+          loader.setAttribute("data-ad-loader", "adsense");
+          loader.addEventListener("load", () => {
+            loader.setAttribute("data-loaded", "true");
+            mountAds();
+          }, { once: true });
+          loader.addEventListener("error", () => {
+            console.warn("[ads] failed to load ad script");
+          }, { once: true });
+          document.head.appendChild(loader);
+          return;
+        }
+
+        mountAds();
+      }
+
+      function applyConsent(consented) {
+        document.body.dataset.cookieConsent = consented ? "accepted" : "declined";
+        if (consented) renderAds();
+      }
+
+      if (!consentConfig.enabled) {
+        applyConsent(true);
+        setBannerVisible(false);
+        return;
+      }
+
+      const stored = readConsent();
+      if (stored === "accepted" || stored === "declined") {
+        setBannerVisible(false);
+        applyConsent(stored === "accepted");
+      } else {
+        setBannerVisible(true);
+        applyConsent(false);
+      }
+
+      document.querySelector("[data-cookie-action='accept']")?.addEventListener("click", () => {
+        writeConsent("accepted");
+        setBannerVisible(false);
+        applyConsent(true);
+      });
+
+      document.querySelector("[data-cookie-action='decline']")?.addEventListener("click", () => {
+        writeConsent("declined");
+        setBannerVisible(false);
+        applyConsent(false);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Play Number Match Online Free — No Download Browser Game</title>
+    <meta name="description" content="Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://numbermatch.top/game/number-match" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GameSite" />
+    <meta property="og:title" content="Play Number Match Online Free — No Download Browser Game" />
+    <meta property="og:description" content="Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone." />
+    <meta property="og:url" content="https://numbermatch.top/game/number-match" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Play Number Match Online Free — No Download Browser Game" />
+    <meta name="twitter:description" content="Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone." />
+    <link rel="dns-prefetch" href="https://html5.gamedistribution.com" />
+    <link rel="preconnect" href="https://html5.gamedistribution.com" crossorigin />
+    <link rel="dns-prefetch" href="https://gamedistribution.com" />
+    <link rel="preconnect" href="https://gamedistribution.com" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+  :root {
+    --site-bg: linear-gradient(180deg, #f7f1e8 0%, #fffaf2 42%, #f3efe6 100%);
+    --site-surface: rgba(255, 255, 255, 0.92);
+    --site-border: rgba(69, 44, 12, 0.12);
+    --site-shadow: 0 20px 60px rgba(69, 44, 12, 0.12);
+    --site-text: #2a2116;
+    --site-muted: #65584a;
+    --site-accent: #b86f18;
+    --site-accent-strong: #8e4f09;
+    --site-radius: 24px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body.site-page {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--site-text);
+    background: var(--site-bg);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    padding: 0;
+  }
+
+  .site-shell {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 32px 16px 144px;
+  }
+
+  .site-aside {
+    display: none;
+  }
+
+  @media (min-width: 1400px) {
+    body.site-page {
+      grid-template-columns: minmax(220px, 1fr) minmax(0, 1180px) minmax(220px, 1fr);
+      column-gap: clamp(16px, 1.5vw, 32px);
+      justify-items: stretch;
+    }
+
+    .site-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 96px;
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .site-aside-left {
+      justify-self: end;
+    }
+
+    .site-aside-right {
+      justify-self: start;
+    }
+
+    .site-aside .ad-slot {
+      width: 320px;
+      min-height: 900px;
+      align-self: center;
+    }
+
+    .site-aside .ad-slot-body {
+      flex: 1 1 auto;
+      min-height: 820px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .site-main {
+    display: grid;
+    gap: 24px;
+  }
+
+  .site-panel {
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
+    border-radius: var(--site-radius);
+    box-shadow: var(--site-shadow);
+    backdrop-filter: blur(12px);
+  }
+
+  .page-hero,
+  .page-section,
+  .game-shell,
+  .site-footer {
+    padding: clamp(20px, 2vw, 32px);
+  }
+
+  .page-hero {
+    display: grid;
+    gap: 12px;
+  }
+
+  .page-eyebrow {
+    color: var(--site-accent-strong);
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .page-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .page-description,
+  .page-section p,
+  .site-meta,
+  .site-footer p,
+  .cookie-banner-copy,
+  .card-desc,
+  .tag-empty {
+    color: var(--site-muted);
+    line-height: 1.65;
+  }
+
+  .page-section h2,
+  .page-section h3,
+  .site-footer h2 {
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  .page-section ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 10px;
+  }
+
+  .game-shell {
+    display: grid;
+    gap: 16px;
+  }
+
+  .game-frame {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: calc(var(--site-radius) - 6px);
+    border: 1px solid rgba(69, 44, 12, 0.08);
+    overflow: hidden;
+  }
+
+  .game-embed {
+    padding: 18px;
+  }
+
+  .game-iframe-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 80vh;
+    border-radius: calc(var(--site-radius) - 12px);
+    overflow: hidden;
+    background: #000;
+  }
+
+  .game-iframe-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .game-embed-player {
+    display: grid;
+    gap: 14px;
+  }
+
+  .game-source-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .game-source-button,
+  .game-load-action,
+  .game-load-link,
+  .source-link-chip,
+  .network-card {
+    border-radius: 999px;
+    text-decoration: none;
+  }
+
+  .game-source-button {
+    border: 1px solid rgba(184, 111, 24, 0.22);
+    background: rgba(184, 111, 24, 0.08);
+    color: var(--site-text);
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .game-source-button.is-active {
+    background: rgba(184, 111, 24, 0.18);
+    border-color: rgba(184, 111, 24, 0.38);
+    color: var(--site-accent-strong);
+  }
+
+  .game-load-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+      radial-gradient(circle at top, rgba(69, 44, 12, 0.18), transparent 48%),
+      linear-gradient(135deg, rgba(15, 21, 31, 0.92), rgba(37, 58, 91, 0.92));
+    color: #fff9ef;
+    text-align: left;
+  }
+
+  .game-load-cover[hidden] {
+    display: none;
+  }
+
+  .game-load-card {
+    width: min(460px, 100%);
+    display: grid;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 209, 142, 0.18);
+    background: rgba(16, 20, 28, 0.82);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  }
+
+  .game-load-kicker {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffd18e;
+  }
+
+  .game-load-title {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.2;
+  }
+
+  .game-load-copy {
+    margin: 0;
+    color: rgba(255, 249, 239, 0.82);
+    line-height: 1.6;
+  }
+
+  .game-load-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .game-load-action,
+  .game-load-link {
+    border: 1px solid rgba(255, 209, 142, 0.2);
+    padding: 10px 16px;
+    font-weight: 700;
+  }
+
+  .game-load-action {
+    background: #ffd18e;
+    color: #3a2305;
+    cursor: pointer;
+  }
+
+  .game-load-link {
+    color: #fff9ef;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .game-source-links {
+    display: grid;
+    gap: 10px;
+  }
+
+  .game-source-links-label,
+  .network-card-domain {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--site-accent-strong);
+    font-weight: 700;
+  }
+
+  .source-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .source-link-chip {
+    padding: 10px 14px;
+    border: 1px solid rgba(184, 111, 24, 0.22);
+    background: rgba(184, 111, 24, 0.08);
+    color: var(--site-text);
+    font-weight: 600;
+  }
+
+  .network-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .network-card {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid rgba(184, 111, 24, 0.18);
+    background: rgba(184, 111, 24, 0.06);
+    color: inherit;
+  }
+
+  .network-card-title {
+    font-weight: 800;
+    font-size: 1rem;
+  }
+
+  .network-card-copy {
+    color: var(--site-muted);
+    line-height: 1.5;
+  }
+
+  .site-footer {
+    display: grid;
+    gap: 12px;
+  }
+
+  .site-footer .compliance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .site-footer .compliance a,
+  .inline-link,
+  .related-list a,
+  .card,
+  .tag-card {
+    color: inherit;
+  }
+
+  .site-footer .compliance a,
+  .inline-link,
+  .related-list a {
+    color: var(--site-accent-strong);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.14em;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .faq-item {
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(184, 111, 24, 0.08);
+  }
+
+  .faq-item h3 {
+    margin-bottom: 8px;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .related-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(184, 111, 24, 0.08);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .ad-slot {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 1px dashed rgba(184, 111, 24, 0.28);
+    background: rgba(184, 111, 24, 0.06);
+  }
+
+  .ad-slot-banner .ad-slot-body,
+  .ad-slot-billboard .ad-slot-body,
+  .ad-slot-native .ad-slot-body,
+  .ad-slot-skyscraper .ad-slot-body,
+  .ad-slot-sticky .ad-slot-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ad-slot-billboard {
+    min-height: 220px;
+    background: linear-gradient(135deg, rgba(184, 111, 24, 0.12), rgba(255, 219, 168, 0.24));
+  }
+
+  .ad-slot-billboard .ad-slot-body {
+    min-height: 150px;
+  }
+
+  .ad-slot-banner {
+    min-height: 170px;
+  }
+
+  .ad-slot-banner .ad-slot-body {
+    min-height: 118px;
+  }
+
+  .ad-slot-native {
+    min-height: 220px;
+  }
+
+  .ad-slot-native .ad-slot-body {
+    min-height: 150px;
+  }
+
+  .ad-slot-skyscraper {
+    min-height: 900px;
+  }
+
+  .ad-slot-skyscraper .ad-slot-body {
+    min-height: 820px;
+  }
+
+  .ad-slot-sticky {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 25;
+    min-height: 108px;
+    box-shadow: 0 18px 45px rgba(69, 44, 12, 0.18);
+    backdrop-filter: blur(16px);
+  }
+
+  .ad-slot-sticky .ad-slot-body {
+    min-height: 68px;
+  }
+
+  .ad-slot-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--site-accent-strong);
+  }
+
+  .ad-slot-message,
+  .ad-slot-placeholder {
+    margin: 0;
+    color: var(--site-muted);
+    font-size: 0.95rem;
+  }
+
+  .cookie-banner {
+    position: fixed;
+    right: 16px;
+    bottom: 132px;
+    z-index: 30;
+    width: min(420px, calc(100vw - 32px));
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(42, 33, 22, 0.1);
+    background: rgba(42, 33, 22, 0.94);
+    color: #fff9ef;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+  }
+
+  .cookie-banner[hidden] { display: none; }
+
+  .cookie-banner-actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cookie-banner button {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .cookie-banner button[data-cookie-action="accept"] {
+    background: #ffd18e;
+    color: #3a2305;
+  }
+
+  .cookie-banner button[data-cookie-action="decline"] {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff9ef;
+  }
+
+  @media (min-width: 980px) {
+    .ad-slot-sticky {
+      display: none;
+    }
+
+    .cookie-banner {
+      bottom: 16px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-shell { padding-top: 20px; }
+    .game-embed { padding: 12px; }
+    .cookie-banner { left: 16px; right: 16px; width: auto; bottom: 144px; }
+    .game-load-cover { padding: 14px; }
+    .game-load-card { padding: 16px; }
+    .game-source-switcher,
+    .game-load-actions,
+    .source-link-list { flex-direction: column; }
+    .game-source-button,
+    .game-load-action,
+    .game-load-link,
+    .source-link-chip { width: 100%; justify-content: center; text-align: center; }
+    .ad-slot-billboard { min-height: 180px; }
+    .ad-slot-banner { min-height: 150px; }
+    .ad-slot-native { min-height: 190px; }
+    .ad-slot-sticky { left: 10px; right: 10px; bottom: 10px; }
+  }
+</style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Number Match — Play Online Free","description":"Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone.","url":"https://numbermatch.top/game/number-match","inLanguage":"en","genre":"puzzle","keywords":"Play Number Match online free, Number Match unblocked in browser, Number Match free to play — no download","applicationCategory":"Game","operatingSystem":"Any (HTML5)","gamePlatform":"Web Browser","publisher":{"@type":"Organization","name":"GameSite"}}</script>
+    
+  </head>
+  <body class="site-page">
+    <aside class="site-aside site-aside-left" aria-hidden="true">
+    <div class="ad-slot ad-slot-skyscraper" data-ad-slot="ad_side_left" data-ad-kind="skyscraper" data-ad-runtime="placeholder" aria-label="advertisement">
+      <div class="ad-slot-label">Sponsored</div>
+      <div class="ad-slot-body"><p class="ad-slot-placeholder">Ad space reserved for sponsored content.</p></div>
+    </div>
+  </aside>
+    <div class="site-shell">
+      <main class="site-main">
+        <section class="site-panel page-hero">
+          <span class="page-eyebrow">Play instantly in your browser</span>
+          <h1 class="page-title">Number Match — Play Online Free</h1>
+          <p class="page-description">Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone.</p>
+        </section>
+
+        
+
+        <section class="site-panel game-shell">
+          <div class="game-frame">
+            <div class="game-embed"><div class="game-embed-player" data-embed-player>
+      
+      <div class="game-iframe-wrap" data-embed-source="gamedistribution">
+        <iframe
+          src="about:blank"
+          title="Number Match — Play Online Free"
+          loading="eager"
+          allowfullscreen
+          allow="autoplay; fullscreen; gamepad; gyroscope"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+          referrerpolicy="no-referrer-when-downgrade"
+          data-embed-frame
+        ></iframe>
+        <div class="game-load-cover" data-load-cover>
+          <div class="game-load-card">
+            <span class="game-load-kicker">Preparing game link</span>
+            <strong class="game-load-title" data-load-title>Loading Number Match — Play Online Free</strong>
+            <p class="game-load-copy" data-load-copy>
+              We are waking up the game iframe. If this link stays dark, switch to a backup link or open the selected link.
+            </p>
+            <div class="game-load-actions">
+              <button type="button" class="game-load-action" data-next-source hidden>
+                Try backup link
+              </button>
+              <a
+                class="game-load-link"
+                data-open-source
+                href="https://gamedistribution.com/games/number-match/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open selected link
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script type="application/json" data-embed-options>[{"key":"gamedistribution-primary","label":"1号链接","title":"Number Match — Play Online Free","sourceId":"gamedistribution","sourceUrl":"https://gamedistribution.com/games/number-match/","embedUrl":"https://html5.gamedistribution.com/dab0bbeebecf4025bbd0da9425ec2b65/?gd_sdk_referrer_url=https://gamedistribution.com/games/number-match/","kind":"primary"}]</script>
+      <script>
+        (() => {
+          const root = document.currentScript?.parentElement;
+          if (!root) return;
+          const payload = root.querySelector('[data-embed-options]');
+          const frame = root.querySelector('[data-embed-frame]');
+          const cover = root.querySelector('[data-load-cover]');
+          const copy = root.querySelector('[data-load-copy]');
+          const titleNode = root.querySelector('[data-load-title]');
+          const openSource = root.querySelector('[data-open-source]');
+          const nextSource = root.querySelector('[data-next-source]');
+          const buttons = Array.from(root.querySelectorAll('[data-embed-choice]'));
+          if (!payload || !frame || !cover || !copy || !titleNode || !openSource) return;
+          const options = JSON.parse(payload.textContent || '[]');
+          if (!Array.isArray(options) || options.length === 0) return;
+
+          const PERF_KEY = 'gamesite_embed_perf_v1';
+          const MIN_COVER_MS = 1800;
+          const READY_BUFFER_MS = 1800;
+          const MAX_COVER_MS = 5000;
+          const SLOW_LOAD_MS = 3000;
+          const AUTO_SWITCH_MS = 4500;
+          const STUCK_LOAD_MS = 6500;
+          let activeIndex = 0;
+          let token = 0;
+
+          const readPerfStore = () => {
+            try {
+              return JSON.parse(window.localStorage.getItem(PERF_KEY) || '{}');
+            } catch {
+              return {};
+            }
+          };
+
+          const writePerfStore = (store) => {
+            try {
+              window.localStorage.setItem(PERF_KEY, JSON.stringify(store));
+            } catch {
+              /* ignore */
+            }
+          };
+
+          const recordPerfSample = (option, durationMs, ok) => {
+            const store = readPerfStore();
+            const current = store[option.embedUrl] || {
+              samples: 0,
+              avgMs: 0,
+              lastMs: 0,
+              failures: 0,
+              sourceId: option.sourceId,
+              label: option.label,
+            };
+            if (ok) {
+              const samples = Number(current.samples || 0);
+              current.samples = samples + 1;
+              current.avgMs = samples === 0
+                ? durationMs
+                : Math.round(((Number(current.avgMs || durationMs) * samples) + durationMs) / (samples + 1));
+              current.lastMs = durationMs;
+            } else {
+              current.failures = Number(current.failures || 0) + 1;
+              current.lastMs = durationMs;
+            }
+            store[option.embedUrl] = current;
+            writePerfStore(store);
+          };
+
+          const optionWarmupMs = (option, index) => {
+            const store = readPerfStore();
+            const current = store[option.embedUrl];
+            if (!current) return 2200 + index * 400;
+            return Number(current.avgMs || current.lastMs || 2200);
+          };
+
+          const optionScore = (option, index) => {
+            const store = readPerfStore();
+            const current = store[option.embedUrl];
+            return optionWarmupMs(option, index) + Number(current?.failures || 0) * 1800;
+          };
+
+          const pickPreferredIndex = (excluded = []) => {
+            const excludeSet = new Set(excluded);
+            const ranked = options
+              .map((option, index) => ({ index, score: optionScore(option, index) }))
+              .filter((item) => !excludeSet.has(item.index))
+              .sort((a, b) => a.score - b.score);
+            return ranked[0]?.index ?? null;
+          };
+
+          const setButtons = () => {
+            buttons.forEach((button, index) => {
+              const selected = index === activeIndex;
+              button.classList.toggle('is-active', selected);
+              button.setAttribute('aria-selected', selected ? 'true' : 'false');
+            });
+            if (nextSource instanceof HTMLElement) nextSource.hidden = options.length < 2;
+          };
+
+          const setCoverState = (state, option, fallbackOption = null) => {
+            cover.dataset.state = state;
+            if (state === 'slow') {
+              titleNode.textContent = 'Still loading? Switch sources if needed';
+              copy.textContent = options.length > 1
+                ? 'This embed is taking longer than normal. Try the backup source or open the original source page in a new tab.'
+                : 'This embed is taking longer than normal. You can keep waiting or open the original source page in a new tab.';
+              return;
+            }
+            if (state === 'switching') {
+              titleNode.textContent = 'Switching to a faster backup source';
+              copy.textContent = fallbackOption
+                ? 'The current source is slow in this browser. We are now trying ' + fallbackOption.label + '.'
+                : 'The current source is slow in this browser. We are trying another source now.';
+              return;
+            }
+            if (state === 'stuck') {
+              titleNode.textContent = 'This source may be stalled';
+              copy.textContent = options.length > 1
+                ? 'Use the backup source button to try another iframe.'
+                : 'Open the original source page while we keep trying here.';
+              return;
+            }
+            titleNode.textContent = 'Loading ' + option.title;
+            copy.textContent = options.length > 1
+              ? 'We are waking up the game iframe. If this source stays dark, switch to a backup source or open the original source page.'
+              : 'We are waking up the game iframe. If it stays dark for too long, open the original source page.';
+          };
+
+          const activate = (index, attempted = []) => {
+            activeIndex = index;
+            token += 1;
+            const currentToken = token;
+            const option = options[index];
+            const startedAt = Date.now();
+            const targetCoverMs = Math.min(
+              MAX_COVER_MS,
+              Math.max(MIN_COVER_MS, optionWarmupMs(option, index) + READY_BUFFER_MS),
+            );
+            let slowTimer = 0;
+            let autoSwitchTimer = 0;
+            let stuckTimer = 0;
+            const tried = attempted.length ? attempted : [index];
+
+            cover.hidden = false;
+            setButtons();
+            setCoverState('loading', option);
+            openSource.setAttribute('href', option.sourceUrl || option.embedUrl);
+
+            const onLoad = () => {
+              if (token !== currentToken) return;
+              window.clearTimeout(slowTimer);
+              window.clearTimeout(autoSwitchTimer);
+              window.clearTimeout(stuckTimer);
+              recordPerfSample(option, Date.now() - startedAt, true);
+              const remaining = Math.max(0, targetCoverMs - (Date.now() - startedAt));
+              window.setTimeout(() => {
+                if (token !== currentToken) return;
+                cover.hidden = true;
+              }, remaining);
+            };
+
+            frame.addEventListener('load', onLoad, { once: true });
+            slowTimer = window.setTimeout(() => {
+              if (token !== currentToken || cover.hidden) return;
+              setCoverState('slow', option);
+            }, SLOW_LOAD_MS);
+            autoSwitchTimer = window.setTimeout(() => {
+              if (token !== currentToken || cover.hidden || options.length < 2) return;
+              const nextIndex = pickPreferredIndex(tried);
+              if (nextIndex === null) return;
+              recordPerfSample(option, Date.now() - startedAt, false);
+              setCoverState('switching', option, options[nextIndex]);
+              window.setTimeout(() => {
+                if (token !== currentToken || cover.hidden) return;
+                activate(nextIndex, [...new Set([...tried, nextIndex])]);
+              }, 180);
+            }, AUTO_SWITCH_MS);
+            stuckTimer = window.setTimeout(() => {
+              if (token !== currentToken || cover.hidden) return;
+              recordPerfSample(option, Date.now() - startedAt, false);
+              setCoverState('stuck', option);
+            }, STUCK_LOAD_MS);
+            frame.setAttribute('src', option.embedUrl);
+
+            window.setTimeout(() => {
+              if (token !== currentToken) return;
+              window.clearTimeout(slowTimer);
+              window.clearTimeout(autoSwitchTimer);
+              window.clearTimeout(stuckTimer);
+            }, STUCK_LOAD_MS + 250);
+          };
+
+          buttons.forEach((button, index) => {
+            button.addEventListener('click', () => activate(index, [index]));
+          });
+          nextSource?.addEventListener('click', () => {
+            const nextIndex = pickPreferredIndex([activeIndex]) ?? ((activeIndex + 1) % options.length);
+            activate(nextIndex, [activeIndex, nextIndex]);
+          });
+          const initialIndex = pickPreferredIndex([]) ?? 0;
+          activate(initialIndex, [initialIndex]);
+        })();
+      </script>
+    </div></div>
+          </div>
+          
+    <div class="ad-slot ad-slot-banner" data-ad-slot="ad_after_game" data-ad-kind="banner" data-ad-runtime="placeholder" aria-label="advertisement">
+      <div class="ad-slot-label">Sponsored</div>
+      <div class="ad-slot-body"><p class="ad-slot-placeholder">Ad space reserved for sponsored content.</p></div>
+    </div>
+  
+        </section>
+
+        <section class="site-panel page-section">
+          <h2>About This Game</h2>
+          <p>Number Match is an HTML5 browser game built around reading the board, pairing equal numbers, and keeping enough free cells for the next move. You can play instantly with no download: scan for identical values, tap or drag matches depending on the embedded version, and clear space before the grid locks up. The goal is not just one match at a time; good runs plan two or three merges ahead so higher-value numbers remain reachable and the board stays open.</p>
+        </section>
+
+        
+
+        <section class="site-panel page-section">
+          <h2>How to Play</h2>
+          <ul><li>Find two matching numbers, then select or drag them together to clear or upgrade the pair.</li><li>Use every move to open space; blocked cells make later matches much harder.</li><li>Plan chains ahead so high-value numbers stay reachable instead of trapped in corners.</li></ul>
+        </section>
+
+        
+    <div class="ad-slot ad-slot-native" data-ad-slot="ad_middle" data-ad-kind="native" data-ad-runtime="placeholder" aria-label="advertisement">
+      <div class="ad-slot-label">Sponsored</div>
+      <div class="ad-slot-body"><p class="ad-slot-placeholder">Ad space reserved for sponsored content.</p></div>
+    </div>
+  
+
+        <section class="site-panel page-section">
+          <h2>Tips</h2>
+          <ul><li>Start by clearing isolated numbers before building larger combinations.</li><li>Keep at least one lane open so new pieces do not split the board.</li><li>When several matches exist, choose the one that creates the most future space.</li></ul>
+        </section>
+
+        
+    <div class="ad-slot ad-slot-native" data-ad-slot="ad_after_tips" data-ad-kind="native" data-ad-runtime="placeholder" aria-label="advertisement">
+      <div class="ad-slot-label">Sponsored</div>
+      <div class="ad-slot-body"><p class="ad-slot-placeholder">Ad space reserved for sponsored content.</p></div>
+    </div>
+  
+
+        <section class="site-panel page-section">
+          <h2>FAQ</h2>
+          <div class="faq-list"><div class="faq-item"><h3>Do I need to install anything to play Number Match?</h3><p>No, the game is a browser-based HTML5 build — just open the page and start playing.</p></div><div class="faq-item"><h3>Does Number Match run on mobile browsers?</h3><p>Yes, it runs smoothly on desktop and most modern phones without any plugin.</p></div></div>
+        </section>
+
+        <section class="site-panel page-section">
+          <h2>Related Games</h2>
+          <ul class="related-list"><li><a href="/tag/puzzle-games">puzzle-games</a></li><li><a href="/tag/relaxing-games">relaxing-games</a></li></ul>
+        </section>
+
+        <section class="site-panel page-section">
+      <h2>From Our Network</h2>
+      <div class="network-grid"><a class="network-card" href="/game/merge-flowers" data-network-domain="https://flowermerger.site">
+          <span class="network-card-title">Merge Flowers</span>
+          <span class="network-card-domain">flowermerger.site</span>
+          <span class="network-card-copy">Open this sister game site</span>
+        </a></div>
+    </section>
+
+        <footer class="site-panel site-footer"><nav class="compliance">
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/terms">Terms of Service</a>
+  <a href="/cookies">Cookie Notice</a>
+  <a href="/disclaimer">Disclaimer</a>
+</nav>
+<p class="copy">© 2026 GameSite. All trademarks belong to their respective owners.</p>
+</footer>
+      </main>
+      
+    <aside class="cookie-banner" data-cookie-banner hidden>
+      <strong>Cookie Preferences</strong>
+      <p class="cookie-banner-copy">
+        We use local storage for gameplay and optional ad cookies for monetization.
+        Review our <a class="inline-link" href="/cookies">Cookie Notice</a> and
+        <a class="inline-link" href="/privacy">Privacy Policy</a>.
+      </p>
+      <div class="cookie-banner-actions">
+        <button type="button" data-cookie-action="accept">Accept</button>
+        <button type="button" data-cookie-action="decline">Decline</button>
+      </div>
+    </aside>
+  
+    </div>
+    <aside class="site-aside site-aside-right" aria-hidden="true">
+    <div class="ad-slot ad-slot-skyscraper" data-ad-slot="ad_side_right" data-ad-kind="skyscraper" data-ad-runtime="placeholder" aria-label="advertisement">
+      <div class="ad-slot-label">Sponsored</div>
+      <div class="ad-slot-body"><p class="ad-slot-placeholder">Ad space reserved for sponsored content.</p></div>
+    </div>
+  </aside>
+    
+    <script src="./script.js"></script>
+    <script>
+    (() => {
+      const consentConfig = {"enabled":true,"storageKey":"gamesite_cookie_consent"};
+      const adRuntime = {"mode":"placeholder","loaderEnabled":false,"slots":[{"name":"ad_after_game","kind":"banner","markupHtml":"<div class=\"ad ad-banner\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000002\"\n       data-ad-format=\"auto\"\n       data-full-width-responsive=\"true\"></ins>\n  \n</div>"},{"name":"ad_middle","kind":"native","markupHtml":"<div class=\"ad ad-native\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-format=\"fluid\"\n       data-ad-layout-key=\"-fb+5w+4e-db+86\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000003\"></ins>\n  \n</div>"},{"name":"ad_after_tips","kind":"native","markupHtml":"<div class=\"ad ad-native\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block\"\n       data-ad-format=\"fluid\"\n       data-ad-layout-key=\"-fb+5w+4e-db+86\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000008\"></ins>\n  \n</div>"},{"name":"ad_side_left","kind":"skyscraper","markupHtml":"<div class=\"ad ad-skyscraper\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block;width:100%;min-height:600px\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000004\"\n       data-ad-format=\"vertical\"\n       data-full-width-responsive=\"false\"></ins>\n  \n</div>"},{"name":"ad_side_right","kind":"skyscraper","markupHtml":"<div class=\"ad ad-skyscraper\" aria-label=\"advertisement\">\n  <ins class=\"adsbygoogle\"\n       style=\"display:block;width:100%;min-height:600px\"\n       data-ad-client=\"ca-pub-XXXXXXXXXXXXXXXX\"\n       data-ad-slot=\"0000000005\"\n       data-ad-format=\"vertical\"\n       data-full-width-responsive=\"false\"></ins>\n  \n</div>"}]};
+      const banner = document.querySelector("[data-cookie-banner]");
+      const storageKey = consentConfig.storageKey;
+      let adsBooted = false;
+
+      function readConsent() {
+        try {
+          return window.localStorage.getItem(storageKey);
+        } catch {
+          return null;
+        }
+      }
+
+      function writeConsent(value) {
+        try {
+          window.localStorage.setItem(storageKey, value);
+        } catch {
+          /* ignore */
+        }
+      }
+
+      function setBannerVisible(visible) {
+        if (!banner) return;
+        banner.hidden = !visible;
+      }
+
+      function renderAds() {
+        if (adsBooted || adRuntime.mode !== "inject" || !adRuntime.slots.length) return;
+
+        const slotMap = new Map(adRuntime.slots.map((slot) => [slot.name, slot]));
+        const mountAds = () => {
+          document.querySelectorAll("[data-ad-slot][data-ad-runtime='inject']").forEach((node) => {
+            const slotName = node.getAttribute("data-ad-slot") || "";
+            const slot = slotMap.get(slotName);
+            const body = node.querySelector(".ad-slot-body");
+            if (!slot || !body || body.getAttribute("data-loaded") === "true") return;
+            body.innerHTML = slot.markupHtml;
+            body.setAttribute("data-loaded", "true");
+            try {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (error) {
+              console.warn("[ads] failed to initialize slot", slotName, error);
+            }
+          });
+          adsBooted = true;
+        };
+
+        if (adRuntime.loaderEnabled && adRuntime.loaderSrc) {
+          const existing = document.querySelector("script[data-ad-loader='adsense']");
+          if (existing && existing.getAttribute("data-loaded") === "true") {
+            mountAds();
+            return;
+          }
+          if (existing) {
+            existing.addEventListener("load", mountAds, { once: true });
+            return;
+          }
+          const loader = document.createElement("script");
+          loader.async = true;
+          loader.src = adRuntime.loaderSrc;
+          loader.crossOrigin = "anonymous";
+          loader.setAttribute("data-ad-loader", "adsense");
+          loader.addEventListener("load", () => {
+            loader.setAttribute("data-loaded", "true");
+            mountAds();
+          }, { once: true });
+          loader.addEventListener("error", () => {
+            console.warn("[ads] failed to load ad script");
+          }, { once: true });
+          document.head.appendChild(loader);
+          return;
+        }
+
+        mountAds();
+      }
+
+      function applyConsent(consented) {
+        document.body.dataset.cookieConsent = consented ? "accepted" : "declined";
+        if (consented) renderAds();
+      }
+
+      if (!consentConfig.enabled) {
+        applyConsent(true);
+        setBannerVisible(false);
+        return;
+      }
+
+      const stored = readConsent();
+      if (stored === "accepted" || stored === "declined") {
+        setBannerVisible(false);
+        applyConsent(stored === "accepted");
+      } else {
+        setBannerVisible(true);
+        applyConsent(false);
+      }
+
+      document.querySelector("[data-cookie-action='accept']")?.addEventListener("click", () => {
+        writeConsent("accepted");
+        setBannerVisible(false);
+        applyConsent(true);
+      });
+
+      document.querySelector("[data-cookie-action='decline']")?.addEventListener("click", () => {
+        writeConsent("declined");
+        setBannerVisible(false);
+        applyConsent(false);
+      });
+    })();
+  </script>
+  </body>
+</html>

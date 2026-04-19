@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://numbermatch.top/sitemap.xml
