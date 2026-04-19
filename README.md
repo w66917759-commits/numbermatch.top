@@ -68,6 +68,7 @@ Number Match is an HTML5 browser game built around reading the board, pairing eq
 - `/seo.json` contains the machine-readable SEO blueprint used to generate this README and page metadata.
 - `/privacy`, `/terms`, `/cookies`, and `/disclaimer` are static compliance pages.
 - `CNAME`, `robots.txt`, and `sitemap.xml` are ready for static hosting.
+- `vercel.json` forces Vercel to deploy this repository as a static no-framework site.
 
 ## Deploy
 
