@@ -213,8 +213,6 @@
   }
 
   .game-source-button,
-  .game-load-action,
-  .game-load-link,
   .source-link-chip,
   .network-card {
     border-radius: 999px;
@@ -299,30 +297,6 @@
 
   @keyframes site-spin {
     to { transform: rotate(360deg); }
-  }
-
-  .game-load-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .game-load-action,
-  .game-load-link {
-    border: 1px solid rgba(255, 209, 142, 0.2);
-    padding: 10px 16px;
-    font-weight: 700;
-  }
-
-  .game-load-action {
-    background: #ffd18e;
-    color: #3a2305;
-    cursor: pointer;
-  }
-
-  .game-load-link {
-    color: #fff9ef;
-    background: rgba(255, 255, 255, 0.08);
   }
 
   .game-source-links {
@@ -643,7 +617,6 @@
     .game-load-cover { padding: 14px; }
     .game-load-card { padding: 16px; }
     .game-source-switcher,
-    .game-load-actions,
     .source-link-list { flex-direction: column; }
     .network-grid { grid-template-columns: 1fr; }
     .network-card {
@@ -659,8 +632,6 @@
       margin-top: 4px;
     }
     .game-source-button,
-    .game-load-action,
-    .game-load-link,
     .source-link-chip { width: 100%; justify-content: center; text-align: center; }
     .ad-slot-billboard { min-height: 180px; }
     .ad-slot-banner { min-height: 150px; }
@@ -707,21 +678,6 @@
           <div class="game-load-card">
             <span class="game-load-spinner" aria-hidden="true"></span>
             <strong class="game-load-title" data-load-title>Loading...</strong>
-            <p class="game-load-copy" data-load-copy>Loading...</p>
-            <div class="game-load-actions" hidden>
-              <button type="button" class="game-load-action" data-next-source hidden>
-                Retry
-              </button>
-              <a
-                class="game-load-link"
-                data-open-source
-                href="https://gamedistribution.com/games/number-match/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -734,12 +690,10 @@
           const payload = root.querySelector('[data-embed-options]');
           const frame = root.querySelector('[data-embed-frame]');
           const cover = root.querySelector('[data-load-cover]');
-          const copy = root.querySelector('[data-load-copy]');
           const titleNode = root.querySelector('[data-load-title]');
-          const openSource = root.querySelector('[data-open-source]');
           const nextSource = root.querySelector('[data-next-source]');
           const buttons = Array.from(root.querySelectorAll('[data-embed-choice]'));
-          if (!payload || !frame || !cover || !copy || !titleNode || !openSource) return;
+          if (!payload || !frame || !cover || !titleNode) return;
           const options = JSON.parse(payload.textContent || '[]');
           if (!Array.isArray(options) || options.length === 0) return;
 
@@ -831,7 +785,6 @@
           const setCoverState = (state, option, fallbackOption = null) => {
             cover.dataset.state = state;
             titleNode.textContent = 'Loading...';
-            copy.textContent = 'Loading...';
           };
 
           const activate = (index, attempted = []) => {
@@ -852,7 +805,6 @@
             cover.hidden = false;
             setButtons();
             setCoverState('loading', option);
-            openSource.setAttribute('href', option.sourceUrl || option.embedUrl);
 
             if (isBlockedPreviewDomain(option)) {
               frame.setAttribute('src', 'about:blank');
