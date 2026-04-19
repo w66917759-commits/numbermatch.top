@@ -1,0 +1,46 @@
+{
+  "slug": "/game/number-match",
+  "title": "Play Number Match Online Free — No Download Browser Game",
+  "h1": "Number Match — Play Online Free",
+  "metaDescription": "Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone.",
+  "content": {
+    "introText": "Number Match is an HTML5 browser game built around reading the board, pairing equal numbers, and keeping enough free cells for the next move. You can play instantly with no download: scan for identical values, tap or drag matches depending on the embedded version, and clear space before the grid locks up. The goal is not just one match at a time; good runs plan two or three merges ahead so higher-value numbers remain reachable and the board stays open.",
+    "howToPlay": [
+      "Find two matching numbers, then select or drag them together to clear or upgrade the pair.",
+      "Use every move to open space; blocked cells make later matches much harder.",
+      "Plan chains ahead so high-value numbers stay reachable instead of trapped in corners."
+    ],
+    "tips": [
+      "Start by clearing isolated numbers before building larger combinations.",
+      "Keep at least one lane open so new pieces do not split the board.",
+      "When several matches exist, choose the one that creates the most future space."
+    ],
+    "faq": [
+      {
+        "question": "Do I need to install anything to play Number Match?",
+        "answer": "No, the game is a browser-based HTML5 build — just open the page and start playing."
+      },
+      {
+        "question": "Does Number Match run on mobile browsers?",
+        "answer": "Yes, it runs smoothly on desktop and most modern phones without any plugin."
+      }
+    ]
+  },
+  "keywordStrategy": {
+    "variations": [
+      "Play Number Match online free",
+      "Number Match unblocked in browser",
+      "Number Match free to play — no download"
+    ],
+    "internalLinks": [
+      "puzzle-games",
+      "relaxing-games"
+    ],
+    "category": "puzzle",
+    "mechanic": "merge"
+  },
+  "schemaData": {
+    "applicationCategory": "Game",
+    "operatingSystem": "Any (HTML5)"
+  }
+}
