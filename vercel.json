@@ -3,5 +3,18 @@
   "framework": null,
   "buildCommand": "node scripts/update-sitemap.mjs",
   "installCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.numbermatch.top"
+        }
+      ],
+      "destination": "https://numbermatch.top/:path*",
+      "permanent": true
+    }
+  ]
 }
