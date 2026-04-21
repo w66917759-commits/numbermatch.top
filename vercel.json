@@ -6,6 +6,17 @@
   "outputDirectory": ".",
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.numbermatch.top"
+        }
+      ],
+      "destination": "https://numbermatch.top",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
