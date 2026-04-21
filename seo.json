@@ -3,6 +3,53 @@
   "title": "Play Number Match Online Free - Local Logic Puzzle Game",
   "h1": "Number Match - Play Online Free",
   "metaDescription": "Play a local Number Match puzzle with a playable LV0 tutorial, three hints per run, animated links, and 8x8 plus 20x20 boards.",
+  "alternateLanguages": [
+    {
+      "code": "en",
+      "url": "https://numbermatch.top/game/number-match",
+      "isDefault": true
+    },
+    {
+      "code": "zh-CN",
+      "url": "https://numbermatch.top/cn",
+      "title": "数字配对 Number Match 在线免费玩 - 中文益智游戏"
+    },
+    {
+      "code": "ja",
+      "url": "https://numbermatch.top/jp",
+      "title": "Number Match 無料オンライン - 日本語の数字パズル"
+    },
+    {
+      "code": "de",
+      "url": "https://numbermatch.top/de",
+      "title": "Number Match Kostenlos Online Spielen - Deutsches Zahlenpuzzle"
+    },
+    {
+      "code": "fr",
+      "url": "https://numbermatch.top/fr",
+      "title": "Number Match Gratuit en Ligne - Puzzle de Nombres en Français"
+    },
+    {
+      "code": "ru",
+      "url": "https://numbermatch.top/ru",
+      "title": "Number Match Играть Онлайн Бесплатно - Русская Числовая Головоломка"
+    },
+    {
+      "code": "es",
+      "url": "https://numbermatch.top/es",
+      "title": "Number Match Gratis Online - Puzzle de Números en Español"
+    },
+    {
+      "code": "pt",
+      "url": "https://numbermatch.top/pt",
+      "title": "Number Match Grátis Online - Puzzle de Números em Português"
+    },
+    {
+      "code": "ko",
+      "url": "https://numbermatch.top/kr",
+      "title": "Number Match 무료 온라인 - 한국어 숫자 퍼즐 게임"
+    }
+  ],
   "content": {
     "introText": "Number Match is a local browser puzzle based on the classic take-ten number game. Clear the board by pairing equal numbers or two numbers that add up to 10. This build starts with a playable LV0 tutorial that teaches each rule with live prompts, then moves into two gated difficulty levels: a shuffled 8x8 first board and a much larger 20x20 second board that only unlocks after Level 1 is cleared.",
     "howToPlay": [

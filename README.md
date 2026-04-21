@@ -68,8 +68,19 @@ Number Match is an HTML5 browser game built around reading the board, pairing eq
 - `/seo.json` contains the machine-readable SEO blueprint used to generate this README and page metadata.
 - `/privacy`, `/terms`, `/cookies`, and `/disclaimer` are static compliance pages.
 - `CNAME`, `robots.txt`, and `sitemap.xml` are ready for static hosting.
+- `scripts/update-sitemap.mjs` regenerates the static sitemap from page canonical and hreflang tags.
 - `sw.js` is generated when this domain has an ad service-worker zone configured.
 - `vercel.json` forces Vercel to deploy this repository as a static no-framework site.
+
+## Sitemap
+
+Run this after adding, removing, or changing static pages:
+
+```bash
+node scripts/update-sitemap.mjs
+```
+
+GitHub Pages and Vercel both run the same script before deployment, so the deployed static `sitemap.xml` stays in sync with the HTML pages.
 
 ## Deploy
 
