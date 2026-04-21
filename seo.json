@@ -1,28 +1,29 @@
 {
   "slug": "/game/number-match",
-  "title": "Play Number Match Online Free — No Download Browser Game",
-  "h1": "Number Match — Play Online Free",
-  "metaDescription": "Play Number Match now, a free browser merge puzzle that loads in seconds. No download needed — drop tiles, chain merges, and chase the next milestone.",
+  "title": "Play Number Match Online Free - Local Logic Puzzle Game",
+  "h1": "Number Match - Play Online Free",
+  "metaDescription": "Play a local Number Match puzzle with a playable LV0 tutorial, three hints per run, animated links, and 8x8 plus 20x20 boards.",
   "content": {
-    "introText": "Number Match is an HTML5 browser game built around reading the board, pairing equal numbers, and keeping enough free cells for the next move. You can play instantly with no download: scan for identical values, tap or drag matches depending on the embedded version, and clear space before the grid locks up. The goal is not just one match at a time; good runs plan two or three merges ahead so higher-value numbers remain reachable and the board stays open.",
+    "introText": "Number Match is a local browser puzzle based on the classic take-ten number game. Clear the board by pairing equal numbers or two numbers that add up to 10. This build starts with a playable LV0 tutorial that teaches each rule with live prompts, then moves into two gated difficulty levels: a shuffled 8x8 first board and a much larger 20x20 second board that only unlocks after Level 1 is cleared.",
     "howToPlay": [
-      "Find two matching numbers, then select or drag them together to clear or upgrade the pair.",
-      "Use every move to open space; blocked cells make later matches much harder.",
-      "Plan chains ahead so high-value numbers stay reachable instead of trapped in corners."
+      "Start with LV0 to play through examples for equal numbers, numbers adding to 10, and one-turn connections.",
+      "Select two equal numbers or two numbers that add up to 10.",
+      "Pairs can clear horizontally, vertically, diagonally, across the end of one row into the next, or with one empty right-angle turn when the path is open.",
+      "Level 1 and Level 2 each allow three hints per run, and every successful pair draws a connection before disappearing."
     ],
     "tips": [
-      "Start by clearing isolated numbers before building larger combinations.",
-      "Keep at least one lane open so new pieces do not split the board.",
-      "When several matches exist, choose the one that creates the most future space."
+      "Open with the few visible adjacent pairs, then use the empty spaces to reveal longer paths.",
+      "On the 20x20 board, work row by row so the large grid stays readable.",
+      "If no pairs remain, restart and try a different clearing order."
     ],
     "faq": [
       {
         "question": "Do I need to install anything to play Number Match?",
-        "answer": "No, the game is a browser-based HTML5 build — just open the page and start playing."
+        "answer": "No, the game is a local browser-based HTML5 build - just open the page and start playing."
       },
       {
-        "question": "Does Number Match run on mobile browsers?",
-        "answer": "Yes, it runs smoothly on desktop and most modern phones without any plugin."
+        "question": "Does this version use an iframe?",
+        "answer": "No. The puzzle board, level lock, matching rules, and scoring all run from local code."
       }
     ]
   },
