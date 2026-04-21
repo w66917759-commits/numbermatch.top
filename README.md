@@ -69,7 +69,7 @@ Number Match is an HTML5 browser game built around reading the board, pairing eq
 - `/privacy`, `/terms`, `/cookies`, and `/disclaimer` are static compliance pages.
 - `CNAME`, `robots.txt`, and `sitemap.xml` are ready for static hosting.
 - `scripts/update-sitemap.mjs` regenerates the static sitemap from page canonical and hreflang tags.
-- `sw.js` is generated when this domain has an ad service-worker zone configured.
+- `sw.js` unregisters old service-worker registrations from previous deployments.
 - `vercel.json` forces Vercel to deploy this repository as a static no-framework site.
 
 ## Sitemap

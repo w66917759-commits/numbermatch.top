@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://quge5.com/88/tag.min.js" data-zone="231415" async data-cfasync="false"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Play Number Match Online Free - Local Logic Puzzle Game</title>
@@ -1240,22 +1239,7 @@
 </nav>
 <p class="copy">© 2026 GameSite. All trademarks belong to their respective owners.</p>
 </footer>
-      </main>
-      
-    <aside class="cookie-banner" data-cookie-banner hidden>
-      <strong>Cookie Preferences</strong>
-      <p class="cookie-banner-copy">
-        We use local storage for gameplay and optional ad cookies for monetization.
-        Review our <a class="inline-link" href="/cookies">Cookie Notice</a> and
-        <a class="inline-link" href="/privacy">Privacy Policy</a>.
-      </p>
-      <div class="cookie-banner-actions">
-        <button type="button" data-cookie-action="accept">Accept</button>
-        <button type="button" data-cookie-action="decline">Decline</button>
-      </div>
-    </aside>
-  
-    </div>
+      </main></div>
     <aside class="site-aside site-aside-right" aria-hidden="true"></aside>
     
     <script data-game-script>(() => {
@@ -2159,126 +2143,16 @@
 })();
 </script>
     <script>
-    (() => {
-      const consentConfig = {"enabled":true,"storageKey":"gamesite_cookie_consent"};
-      const adRuntime = {"mode":"placeholder","loaderEnabled":false,"slots":[],"serviceWorker":{"path":"/sw.js","domain":"5gvci.com","zoneId":10897629,"importUrl":"https://5gvci.com/act/files/service-worker.min.js?r=sw"}};
-      const banner = document.querySelector("[data-cookie-banner]");
-      const storageKey = consentConfig.storageKey;
-      let adsBooted = false;
-      let adServiceWorkerBooted = false;
-
-      function readConsent() {
-        try {
-          return window.localStorage.getItem(storageKey);
-        } catch {
-          return null;
-        }
-      }
-
-      function writeConsent(value) {
-        try {
-          window.localStorage.setItem(storageKey, value);
-        } catch {
-          /* ignore */
-        }
-      }
-
-      function setBannerVisible(visible) {
-        if (!banner) return;
-        banner.hidden = !visible;
-      }
-
-      function renderAds() {
-        registerAdServiceWorker();
-        if (adsBooted || adRuntime.mode !== "inject" || !adRuntime.slots.length) return;
-
-        const slotMap = new Map(adRuntime.slots.map((slot) => [slot.name, slot]));
-        const mountAds = () => {
-          document.querySelectorAll("[data-ad-slot][data-ad-runtime='inject']").forEach((node) => {
-            const slotName = node.getAttribute("data-ad-slot") || "";
-            const slot = slotMap.get(slotName);
-            const body = node.querySelector(".ad-slot-body");
-            if (!slot || !body || body.getAttribute("data-loaded") === "true") return;
-            body.innerHTML = slot.markupHtml;
-            body.setAttribute("data-loaded", "true");
-            try {
-              (window.adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (error) {
-              console.warn("[ads] failed to initialize slot", slotName, error);
-            }
-          });
-          adsBooted = true;
-        };
-
-        if (adRuntime.loaderEnabled && adRuntime.loaderSrc) {
-          const existing = document.querySelector("script[data-ad-loader='adsense']");
-          if (existing && existing.getAttribute("data-loaded") === "true") {
-            mountAds();
-            return;
-          }
-          if (existing) {
-            existing.addEventListener("load", mountAds, { once: true });
-            return;
-          }
-          const loader = document.createElement("script");
-          loader.async = true;
-          loader.src = adRuntime.loaderSrc;
-          loader.crossOrigin = "anonymous";
-          loader.setAttribute("data-ad-loader", "adsense");
-          loader.addEventListener("load", () => {
-            loader.setAttribute("data-loaded", "true");
-            mountAds();
-          }, { once: true });
-          loader.addEventListener("error", () => {
-            console.warn("[ads] failed to load ad script");
-          }, { once: true });
-          document.head.appendChild(loader);
-          return;
-        }
-
-        mountAds();
-      }
-
-      function registerAdServiceWorker() {
-        if (adServiceWorkerBooted || !adRuntime.serviceWorker || !("serviceWorker" in navigator)) return;
-        adServiceWorkerBooted = true;
-        navigator.serviceWorker.register(adRuntime.serviceWorker.path).catch((error) => {
-          console.warn("[ads] failed to register service worker", error);
-        });
-      }
-
-      function applyConsent(consented) {
-        document.body.dataset.cookieConsent = consented ? "accepted" : "declined";
-        if (consented) renderAds();
-      }
-
-      if (!consentConfig.enabled) {
-        applyConsent(true);
-        setBannerVisible(false);
-        return;
-      }
-
-      const stored = readConsent();
-      if (stored === "accepted" || stored === "declined") {
-        setBannerVisible(false);
-        applyConsent(stored === "accepted");
-      } else {
-        setBannerVisible(true);
-        applyConsent(false);
-      }
-
-      document.querySelector("[data-cookie-action='accept']")?.addEventListener("click", () => {
-        writeConsent("accepted");
-        setBannerVisible(false);
-        applyConsent(true);
-      });
-
-      document.querySelector("[data-cookie-action='decline']")?.addEventListener("click", () => {
-        writeConsent("declined");
-        setBannerVisible(false);
-        applyConsent(false);
-      });
-    })();
-  </script>
+      (() => {
+        if (!("serviceWorker" in navigator)) return;
+        navigator.serviceWorker.getRegistrations()
+          .then((registrations) => {
+            registrations.forEach((registration) => {
+              if (registration.scope.startsWith(`${location.origin}/`)) registration.unregister();
+            });
+          })
+          .catch(() => {});
+      })();
+    </script>
   </body>
 </html>

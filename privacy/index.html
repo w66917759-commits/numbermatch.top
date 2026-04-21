@@ -592,13 +592,8 @@
 <h2>Data We Collect</h2>
 <ul>
   <li>Anonymous analytics (page views, referrer, approximate region).</li>
-  <li>Cookies from third-party advertising partners (Google AdSense).</li>
   <li>Local storage used only to persist game state on your device.</li>
 </ul>
-
-<h2>Advertising</h2>
-<p>We use Google AdSense. Google and its partners may use cookies to serve ads based on your prior visits.
-You may opt out of personalized advertising at <a href="https://www.google.com/settings/ads">Google Ads Settings</a>.</p>
 
 <h2>Your Rights</h2>
 <p>EU/UK residents (GDPR) may request access, correction, or deletion of personal data. California residents (CCPA)
@@ -620,132 +615,6 @@ may opt out of the sale or sharing of personal information. Contact: contact@num
 <p class="copy">© 2026 GameSite. All trademarks belong to their respective owners.</p>
 </footer>
     </main>
-    
-    <aside class="cookie-banner" data-cookie-banner hidden>
-      <strong>Cookie Preferences</strong>
-      <p class="cookie-banner-copy">
-        We use local storage for gameplay and optional ad cookies for monetization.
-        Review our <a class="inline-link" href="/cookies">Cookie Notice</a> and
-        <a class="inline-link" href="/privacy">Privacy Policy</a>.
-      </p>
-      <div class="cookie-banner-actions">
-        <button type="button" data-cookie-action="accept">Accept</button>
-        <button type="button" data-cookie-action="decline">Decline</button>
-      </div>
-    </aside>
-  
   </div>
-  <script>
-    (() => {
-      const consentConfig = {"enabled":true,"storageKey":"gamesite_cookie_consent"};
-      const adRuntime = {"mode":"placeholder","loaderEnabled":false,"slots":[]};
-      const banner = document.querySelector("[data-cookie-banner]");
-      const storageKey = consentConfig.storageKey;
-      let adsBooted = false;
-
-      function readConsent() {
-        try {
-          return window.localStorage.getItem(storageKey);
-        } catch {
-          return null;
-        }
-      }
-
-      function writeConsent(value) {
-        try {
-          window.localStorage.setItem(storageKey, value);
-        } catch {
-          /* ignore */
-        }
-      }
-
-      function setBannerVisible(visible) {
-        if (!banner) return;
-        banner.hidden = !visible;
-      }
-
-      function renderAds() {
-        if (adsBooted || adRuntime.mode !== "inject" || !adRuntime.slots.length) return;
-
-        const slotMap = new Map(adRuntime.slots.map((slot) => [slot.name, slot]));
-        const mountAds = () => {
-          document.querySelectorAll("[data-ad-slot][data-ad-runtime='inject']").forEach((node) => {
-            const slotName = node.getAttribute("data-ad-slot") || "";
-            const slot = slotMap.get(slotName);
-            const body = node.querySelector(".ad-slot-body");
-            if (!slot || !body || body.getAttribute("data-loaded") === "true") return;
-            body.innerHTML = slot.markupHtml;
-            body.setAttribute("data-loaded", "true");
-            try {
-              (window.adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (error) {
-              console.warn("[ads] failed to initialize slot", slotName, error);
-            }
-          });
-          adsBooted = true;
-        };
-
-        if (adRuntime.loaderEnabled && adRuntime.loaderSrc) {
-          const existing = document.querySelector("script[data-ad-loader='adsense']");
-          if (existing && existing.getAttribute("data-loaded") === "true") {
-            mountAds();
-            return;
-          }
-          if (existing) {
-            existing.addEventListener("load", mountAds, { once: true });
-            return;
-          }
-          const loader = document.createElement("script");
-          loader.async = true;
-          loader.src = adRuntime.loaderSrc;
-          loader.crossOrigin = "anonymous";
-          loader.setAttribute("data-ad-loader", "adsense");
-          loader.addEventListener("load", () => {
-            loader.setAttribute("data-loaded", "true");
-            mountAds();
-          }, { once: true });
-          loader.addEventListener("error", () => {
-            console.warn("[ads] failed to load ad script");
-          }, { once: true });
-          document.head.appendChild(loader);
-          return;
-        }
-
-        mountAds();
-      }
-
-      function applyConsent(consented) {
-        document.body.dataset.cookieConsent = consented ? "accepted" : "declined";
-        if (consented) renderAds();
-      }
-
-      if (!consentConfig.enabled) {
-        applyConsent(true);
-        setBannerVisible(false);
-        return;
-      }
-
-      const stored = readConsent();
-      if (stored === "accepted" || stored === "declined") {
-        setBannerVisible(false);
-        applyConsent(stored === "accepted");
-      } else {
-        setBannerVisible(true);
-        applyConsent(false);
-      }
-
-      document.querySelector("[data-cookie-action='accept']")?.addEventListener("click", () => {
-        writeConsent("accepted");
-        setBannerVisible(false);
-        applyConsent(true);
-      });
-
-      document.querySelector("[data-cookie-action='decline']")?.addEventListener("click", () => {
-        writeConsent("declined");
-        setBannerVisible(false);
-        applyConsent(false);
-      });
-    })();
-  </script>
 </body>
 </html>
